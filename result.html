@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title> Square Finder App - Result Page </title>
+		<link rel="stylesheet" href="style.css"></link>
+	</head>
+	<body>
+		<center>
+			<a href="index.html"> Home </a>
+			<a href="about.html"> About </a>
+			<h1>Result Page</h1>
+			<h2 id="msg"></h2>	
+		</center>
+		<script>
+			let msg=document.getElementById("msg");
+			let res=localStorage.getItem("res");
+			msg.innerHTML=" Square is : " +res;
+		</script>
+	</body>
+</html>

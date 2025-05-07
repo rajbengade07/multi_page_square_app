@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title> Square Finder App - Home Page </title>
+		<link rel="stylesheet" href="style.css"></link>
+	</head>
+	<body>
+		<center>
+			<a href="index.html"> Home </a>
+			<a href="about.html"> About </a>
+			<h1>Square Finder App</h1>
+			<form onsubmit="find()">
+				<input type="number" step="any" id="num" placeholder="enter a number"/></br></br>
+				<input type="submit" value="Find Square"/>
+			</form>
+		</center>
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let num=document.getElementById("num");
+				let msg=document.getElementById("msg");
+				
+				if(num.value==="")
+				{
+					alert("please enter a number");
+					msg.innerHTML="";
+					num.focus();
+					return;
+				}
+				
+				let n= parseFloat(num.value);
+				let r=n*n;
+				let ans=r.toFixed(2);
+				localStorage.setItem("res",ans);
+				window.location.href="result.html";
+			}
+		</script>
+	</body>
+</html>
